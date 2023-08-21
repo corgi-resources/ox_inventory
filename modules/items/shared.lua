@@ -97,6 +97,15 @@ for k, v in pairs(data 'items') do
     end
 end
 
+for k, v in pairs(data 'items_qbcore') do
+	v.name = k
+	local success, response = pcall(newItem, v)
+
+    if not success then
+        warn(('An error occurred while creating item "%s" callback!\n^1SCRIPT ERROR: %s^0'):format(k, response))
+    end
+end
+
 ItemList.cash = ItemList.money
 
 return ItemList

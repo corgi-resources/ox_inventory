@@ -166,7 +166,7 @@ CreateThread(function()
 			end
 
 			if table.type(dump) ~= 'empty' then
-				local file = {string.strtrim(LoadResourceFile(shared.resource, 'data/items.lua'))}
+				local file = {string.strtrim(LoadResourceFile(shared.resource, 'data/items_qbcore.lua'))}
 				file[1] = file[1]:gsub('}$', '')
 
 				---@todo separate into functions for reusability, properly handle nil values
@@ -210,7 +210,7 @@ CreateThread(function()
 
 				file[fileSize+1] = '}'
 
-				SaveResourceFile(shared.resource, 'data/items.lua', table.concat(file), -1)
+				SaveResourceFile(shared.resource, 'data/items_qbcore.lua', table.concat(file), -1)
 				shared.info(count, 'items have been copied from the QBCore.Shared.Items.')
 				shared.info('You should restart the resource to load the new items.')
 			end
